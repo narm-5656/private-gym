@@ -51,7 +51,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
           className="mt-5 max-w-xl text-base leading-relaxed text-neutral-200 md:text-lg"
         >
-          宮原駅徒歩9分・加茂宮駅徒歩5分 / 24時間営業 / 待ち時間ゼロ・完全予約制の貸切ジム
+          宮原駅徒歩９分・加茂宮駅徒歩５分 / 完全予約制 / 24時間営業 / 店前駐輪OK
         </motion.p>
 
         <motion.div

@@ -27,7 +27,7 @@ export function Pricing() {
 
         <div className="mt-14 grid gap-6 lg:grid-cols-2 lg:gap-8">
           <FadeIn>
-            <div className="h-full border border-white/12 bg-background p-7 md:p-9">
+            <div className="h-full border border-white bg-background p-7 md:p-9">
               <p className="font-display text-sm tracking-[0.22em] text-muted">
                 DROP-IN
               </p>
