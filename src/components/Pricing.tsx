@@ -3,6 +3,7 @@
 import { FadeIn } from "./FadeIn";
 
 const dropIn = [
+  { duration: "60分（初回お試し）", price: "1,500" },
   { duration: "60分", price: "1,900" },
   { duration: "90分", price: "2,850" },
   { duration: "120分", price: "3,800" },
@@ -85,6 +86,66 @@ export function Pricing() {
         </div>
 
         <FadeIn delay={0.12}>
+          <div className="mt-10 border border-white/20 bg-background p-7 md:p-9">
+            <p className="font-display text-sm tracking-[0.22em] text-muted">
+              SHARE & SAVE
+            </p>
+            <h3 className="mt-3 text-xl text-white md:text-2xl">
+              複数人での「割り勘」も可能です。
+            </h3>
+            <div className="mt-5 space-y-3 text-base leading-7 text-neutral-200">
+              <p>
+                当ジムは「1部屋あたりの貸切料金」です。
+                一度の予約で最大3名様まで、同時にご利用いただけます。
+              </p>
+              <p>
+                ご友人やパートナーとの合同トレーニングなら、1人あたりの料金が安くなります。
+              </p>
+              <p>
+                パーソナルトレーナー様の指導場所としての同伴利用も大歓迎です。
+              </p>
+            </div>
+
+            <p className="mt-8 text-sm text-neutral-300">
+              料金シミュレーション（基本料金 ¥1,900 / 60分 の場合）
+            </p>
+            <ul className="mt-4 space-y-0 divide-y divide-white/10 border-y border-white/10">
+              <li className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                <span className="text-neutral-200">2名でご利用</span>
+                <div className="sm:text-right">
+                  <p className="font-display text-2xl tracking-wide text-white">
+                    1人あたり ¥950
+                    <span className="ml-2 text-sm tracking-normal text-neutral-300">
+                      / 60分
+                    </span>
+                  </p>
+                </div>
+              </li>
+              <li className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                <span className="text-neutral-200">3名でご利用</span>
+                <div className="sm:text-right">
+                  <p className="font-display text-2xl tracking-wide text-white">
+                    1人あたり 約¥633
+                    <span className="ml-2 text-sm tracking-normal text-neutral-300">
+                      / 60分
+                    </span>
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+            <div className="mt-8 text-center sm:text-left">
+              <a
+                href="#"
+                className="inline-flex w-full items-center justify-center border border-white bg-white px-8 py-4 font-display text-xs tracking-[0.24em] text-black transition-colors hover:bg-transparent hover:text-white sm:w-auto"
+              >
+                初回お試し 1,500円で予約する
+              </a>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.16}>
           <div className="mt-10 text-center">
             <a
               href="#pricing"

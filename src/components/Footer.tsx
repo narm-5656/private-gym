@@ -30,6 +30,11 @@ export function Footer() {
           <p className="section-label">リンク</p>
           <ul className="mt-4 space-y-2 text-base text-neutral-200">
             <li>
+              <Link href="/law" className="transition-colors hover:text-white">
+                特定商取引法に基づく表記
+              </Link>
+            </li>
+            <li>
               <Link
                 href="/terms"
                 className="transition-colors hover:text-white"
@@ -39,10 +44,10 @@ export function Footer() {
             </li>
             <li>
               <Link
-                href="/legal"
+                href="/privacy"
                 className="transition-colors hover:text-white"
               >
-                特定商取引法に基づく表記
+                プライバシーポリシー
               </Link>
             </li>
             <li>
