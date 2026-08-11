@@ -91,7 +91,7 @@ export function Pricing() {
               SHARE & SAVE
             </p>
             <h3 className="mt-3 text-xl text-white md:text-2xl">
-              複数人での「割り勘」も可能です。
+              複数人での「割り勘」もお得です。
             </h3>
             <div className="mt-5 space-y-3 text-base leading-7 text-neutral-200">
               <p>

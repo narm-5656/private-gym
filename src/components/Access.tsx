@@ -8,17 +8,25 @@ const info = [
   {
     icon: MapPin,
     label: "所在地",
-    body: "埼玉県さいたま市北区宮原町",
+    lines: [
+      "〒331-0812 埼玉県さいたま市北区宮原町３丁目６０ 金子第二ビル １階",
+    ],
   },
   {
     icon: Train,
-    label: "最寄り駅",
-    body: "宮原駅 徒歩9分 / 加茂宮駅 徒歩5分",
+    label: "アクセス",
+    lines: [
+      "宮原駅（JR高崎線）徒歩９分",
+      "加茂宮駅（ニューシャトル）徒歩５分",
+      "日進駅（JR川越線）自転車５分",
+      "土呂駅（JR宇都宮線）自転車10分",
+      "店舗前駐輪可（自転車３台・原付２台）",
+    ],
   },
   {
     icon: Clock,
     label: "営業時間",
-    body: "24時間営業（完全予約制・無人）",
+    lines: ["24時間営業（完全予約制・無人）"],
   },
 ];
 
@@ -43,9 +51,11 @@ export function Access() {
                   strokeWidth={1.25}
                 />
                 <p className="mt-5 text-sm text-neutral-300">{item.label}</p>
-                <p className="mt-2 text-base leading-7 text-white md:text-lg">
-                  {item.body}
-                </p>
+                <div className="mt-2 space-y-1 text-base leading-7 text-white md:text-lg">
+                  {item.lines.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </div>
               </div>
             </FadeIn>
           ))}

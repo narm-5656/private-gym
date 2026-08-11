@@ -42,7 +42,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="mt-8 max-w-xl text-2xl font-medium leading-relaxed tracking-wide text-white md:mt-10 md:text-3xl md:leading-snug"
         >
-          完全個室ジムでマシンを独占
+          完全個室トレーニングジム
         </motion.h1>
 
         <motion.p
@@ -51,7 +51,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
           className="mt-5 max-w-xl text-base leading-relaxed text-neutral-200 md:text-lg"
         >
-          宮原駅徒歩９分・加茂宮駅徒歩５分 / 完全予約制 / 24時間営業 / 店前駐輪OK
+          宮原駅徒歩９分・加茂宮駅徒歩５分 / 入会金・契約不要 /
+          <br />
+          完全予約制 / 24時間営業 / 店前駐輪OK
         </motion.p>
 
         <motion.div
