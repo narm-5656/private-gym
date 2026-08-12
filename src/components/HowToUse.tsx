@@ -43,7 +43,7 @@ const steps = [
     step: "05",
     title: "退室",
     body: "簡易清掃の上、予約時間内にご退室ください。",
-    note: "器具の拭き上げ、掃除機によるホコリ・髪の毛の清掃にご協力をお願いいたします。",
+    note: "次にご利用される方のため、器具の拭き上げ、掃除機によるホコリ・髪の毛の清掃にご協力をお願いいたします。",
   },
 ];
 
@@ -70,6 +70,12 @@ const noticeGroups = [
       "ご予約時間を超過しての滞在（次の利用者様のご迷惑となりますので、お着替え・清掃を含め、退室時間は厳守してください）",
     ],
   },
+];
+
+const violationNotices = [
+  "本規約に違反する重大な行為、および他のお客様のご迷惑となる行為が防犯カメラ等で発覚した場合、今後の当施設のご利用をお断りさせていただきます。",
+  "施設・備品の破損、過度な汚損、その他当ジムの営業に支障をきたす悪質な違反が認められた場合は、原状回復にかかる実費等の損害賠償、ならびに営業補償（違約金等）を法的措置に基づき厳格に請求いたします。",
+  "違反行為による処分の際、ギフトカード残額の返金は一切いたしませんので、あらかじめご了承ください。",
 ];
 
 export function HowToUse() {
@@ -115,7 +121,7 @@ export function HowToUse() {
               ご利用にあたってのお願い（禁止・注意事項）
             </h3>
             <p className="mt-4 text-base leading-7 text-neutral-200">
-              皆様に快適・安全にご利用いただくため、以下のルール厳守をお願いいたします。
+              皆様に快適・安全にご利用いただくため、以下の行為を禁止いたします。
             </p>
 
             <div className="mt-8 space-y-8">
@@ -136,6 +142,22 @@ export function HowToUse() {
                   </ul>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-10">
+              <h4 className="text-sm font-medium tracking-wide text-white md:text-base">
+                【違反時の対応について】
+              </h4>
+              <ul className="mt-3 space-y-3 text-base leading-7 text-neutral-200">
+                {violationNotices.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="shrink-0" aria-hidden>
+                      ・
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </FadeIn>

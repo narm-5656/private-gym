@@ -3,3 +3,6 @@ export const BOOKING_URL =
 
 export const GIFT_CARD_URL =
   "https://app.squareup.com/gift/MLN88J3QPEVDF/order";
+
+export const GIFT_CARD_BALANCE_URL =
+  "https://app.squareup.com/gift/MLN88J3QPEVDF/check-balance";

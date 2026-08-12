@@ -1,10 +1,9 @@
 "use client";
 
-import { BOOKING_URL, GIFT_CARD_URL } from "@/lib/booking";
+import { BOOKING_URL, GIFT_CARD_URL, GIFT_CARD_BALANCE_URL } from "@/lib/booking";
 import { FadeIn } from "./FadeIn";
 
 const dropIn = [
-  { duration: "60分（初回お試し）", price: "1,500" },
   { duration: "60分", price: "1,900" },
   { duration: "90分", price: "2,850" },
   { duration: "120分", price: "3,800" },
@@ -27,85 +26,105 @@ export function Pricing() {
           </h2>
         </FadeIn>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-2 lg:gap-8">
-          <FadeIn>
-            <div className="h-full border border-white bg-background p-7 md:p-9">
-              <div className="flex flex-wrap items-start justify-between gap-4">
-                <div>
-                  <p className="font-display text-sm tracking-[0.22em] text-muted">
-                    DROP-IN
-                  </p>
-                  <h3 className="mt-3 text-xl text-white">都度払い</h3>
-                </div>
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex shrink-0 items-center justify-center border border-white bg-white px-8 py-4 font-display text-sm tracking-[0.24em] text-black transition-colors hover:bg-transparent hover:text-white"
-                >
-                  予約する
-                </a>
-              </div>
-              <ul className="mt-8 space-y-0 divide-y divide-white/10">
-                {dropIn.map((plan) => (
-                  <li
-                    key={plan.duration}
-                    className="flex items-baseline justify-between py-5"
+        <div className="mt-14">
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
+            <FadeIn className="h-full">
+              <div className="flex h-full flex-col border border-white bg-background p-7 md:p-9">
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div>
+                    <p className="font-display text-sm tracking-[0.22em] text-muted">
+                      DROP-IN
+                    </p>
+                    <h3 className="mt-3 text-xl text-white">都度払い</h3>
+                  </div>
+                  <a
+                    href={BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex shrink-0 items-center justify-center border border-white bg-white px-8 py-4 font-display text-sm tracking-[0.24em] text-black transition-colors hover:bg-transparent hover:text-white"
                   >
-                    <span className="text-neutral-200">{plan.duration}</span>
-                    <span className="font-display text-2xl tracking-wide text-white">
-                      ¥{plan.price}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </FadeIn>
+                    予約する
+                  </a>
+                </div>
+                <ul className="mt-8 space-y-0 divide-y divide-white/10">
+                  {dropIn.map((plan) => (
+                    <li
+                      key={plan.duration}
+                      className="flex items-baseline justify-between py-5"
+                    >
+                      <span className="text-base text-neutral-200 md:text-lg">
+                        {plan.duration}
+                      </span>
+                      <span className="font-display text-xl tracking-wide text-white md:text-2xl">
+                        ¥{plan.price}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
 
-          <FadeIn delay={0.1}>
-            <div className="relative h-full border border-white bg-background p-7 md:p-9">
-              <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-4">
-                <p className="font-display text-sm tracking-[0.22em] text-muted">
-                  BEST VALUE
+            <FadeIn className="h-full" delay={0.1}>
+              <div className="flex h-full flex-col border border-white bg-background p-7 md:p-9">
+                <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-4">
+                  <p className="font-display text-sm tracking-[0.22em] text-muted">
+                    BEST VALUE
+                  </p>
+                  <a
+                    href={GIFT_CARD_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex shrink-0 items-center justify-center border border-white bg-white px-5 py-3 font-display text-xs tracking-[0.18em] text-black transition-colors hover:bg-transparent hover:text-white sm:px-6 sm:py-3.5 sm:text-sm"
+                  >
+                    ギフトカード購入
+                  </a>
+                </div>
+                <h3 className="mt-5 max-w-xl text-xl text-white">
+                  ギフトカード利用（10％OFF）
+                </h3>
+                <p className="mt-3 max-w-xl text-base leading-relaxed text-neutral-200">
+                  ギフトカードは19,000円から購入・チャージ可能です。
                 </p>
+
+                <div className="mt-6 overflow-x-auto">
+                  <table className="w-full min-w-0 border-collapse text-left">
+                    <tbody className="divide-y divide-white/10 border-t border-white/20">
+                      {unitPrices.map((row) => (
+                        <tr key={row.duration}>
+                          <td className="py-4 pr-4 text-base text-neutral-200 md:text-lg">
+                            {row.duration}
+                          </td>
+                          <td className="py-4 text-right font-display text-xl tracking-wide text-white md:text-2xl">
+                            ¥{row.price}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+
+          <FadeIn delay={0.12}>
+            <div className="mt-4 grid lg:grid-cols-2 lg:gap-8">
+              <div className="hidden lg:block" aria-hidden />
+              <div className="flex justify-end">
                 <a
-                  href={GIFT_CARD_URL}
+                  href={GIFT_CARD_BALANCE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex shrink-0 items-center justify-center border border-white bg-white px-5 py-3 font-display text-xs tracking-[0.18em] text-black transition-colors hover:bg-transparent hover:text-white sm:px-6 sm:py-3.5 sm:text-sm"
+                  className="inline-flex items-center justify-center border border-white bg-white px-6 py-4 font-display text-sm tracking-[0.18em] text-black transition-colors hover:bg-transparent hover:text-white"
                 >
-                  ギフトカード購入・チャージ・残高確認
+                  ギフトカードの残高確認・チャージはこちら
                 </a>
-              </div>
-              <h3 className="mt-5 max-w-xl text-xl text-white">
-                ギフトカード利用（プリペイドチャージ）
-              </h3>
-              <p className="mt-3 max-w-xl text-base leading-relaxed text-neutral-200">
-                10回分の料金からチャージ可能なギフトカード購入で10%お得にご利用いただけます。
-              </p>
-
-              <div className="mt-6 overflow-x-auto">
-                <table className="w-full min-w-0 border-collapse text-left">
-                  <tbody className="divide-y divide-white/10 border-t border-white/20">
-                    {unitPrices.map((row) => (
-                      <tr key={row.duration}>
-                        <td className="py-4 pr-4 text-base text-neutral-200 md:text-lg">
-                          {row.duration}
-                        </td>
-                        <td className="py-4 text-right font-display text-xl tracking-wide text-white md:text-2xl">
-                          ¥{row.price}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
               </div>
             </div>
           </FadeIn>
         </div>
 
-        <FadeIn delay={0.12}>
-          <div className="mt-10 border border-white/20 bg-background p-7 md:p-9">
+        <FadeIn delay={0.14}>
+          <div className="mt-10 border border-white bg-background p-7 md:p-9">
             <p className="font-display text-sm tracking-[0.22em] text-muted">
               SHARE & SAVE
             </p>
