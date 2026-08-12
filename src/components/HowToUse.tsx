@@ -15,39 +15,61 @@ const steps = [
     step: "01",
     title: "WEB予約",
     body: "希望の日時をオンラインで選択。混雑や待ち時間はありません。",
-    note: "※キャンセルは利用開始の2時間前まで可能です。",
+    note: "キャンセルは利用開始の2時間前まで可能です。",
   },
   {
     icon: KeyRound,
     step: "02",
     title: "暗証番号発行",
     body: "「利用開始の2時間前」に、入室用の暗証番号が通知されます。",
-    note: "※直前の利用予約の場合は決済完了直後に通知されます。",
+    note: "直前の利用予約の場合は決済完了直後に通知されます。",
   },
   {
     icon: MapPin,
     step: "03",
     title: "予約時間に現地へ",
     body: "ご予約の日時に合わせて店舗へお越しください。",
+    note: "暗証番号は予約開始時間より有効となります。ご予約時間以前の入室はできません。",
   },
   {
     icon: DoorOpen,
     step: "04",
     title: "入室",
     body: "暗証番号を入力してご入室ください。",
-    note: "※土足禁止となりますので、室内履きをご持参ください。レンタルシューズも完備しています。",
+    note: "土足禁止となりますので、室内履きをご持参ください。レンタルシューズも完備しています。",
   },
   {
     icon: LogOut,
     step: "05",
     title: "退室",
     body: "簡易清掃の上、予約時間内にご退室ください。",
+    note: "器具の拭き上げ、掃除機によるホコリ・髪の毛の清掃にご協力をお願いいたします。",
   },
 ];
 
-const notices = [
-  "前後のお客様とのトラブルを防ぐため、「予約時間以降のご入室」および「終了時間の厳守」にご協力をお願いいたします。",
-  "次の方が気持ちよく利用できるよう、ご使用後の器具の片付けおよび簡単な清掃（使用器具の拭き掃除、掃除機による床清掃）にご協力をお願いいたします。",
+const noticeGroups = [
+  {
+    title: "施設・設備について",
+    items: [
+      "土足での入室（室内用トレーニングシューズをご持参いただくか、当施設の無料レンタルシューズをご利用ください）",
+      "施設内の設備・備品を故意に破損・汚損する行為、および持ち出し",
+      "施設内での喫煙、火気の使用、および食事（プロテインや蓋つきの飲料による水分補給は可能です）",
+      "洗面台の不適切な使用や水浴び（シャワー設備はございません）",
+    ],
+  },
+  {
+    title: "トレーニング時のマナーについて",
+    items: [
+      "バーベルやダンベルを床に落とす・叩きつける行為（必ずセーフティバーをご使用の上、静かに床に置いてください）",
+      "大声や奇声を発する行為、スピーカーでの過度な大音量での音楽再生など、近隣の迷惑となる行為",
+    ],
+  },
+  {
+    title: "ご予約・ご利用時間について",
+    items: [
+      "ご予約時間を超過しての滞在（次の利用者様のご迷惑となりますので、お着替え・清掃を含め、退室時間は厳守してください）",
+    ],
+  },
 ];
 
 export function HowToUse() {
@@ -90,18 +112,31 @@ export function HowToUse() {
         <FadeIn delay={0.4}>
           <div className="mt-16 border-t border-white/12 pt-10">
             <h3 className="text-base font-medium tracking-wide text-white md:text-lg">
-              ご利用にあたってのお願い
+              ご利用にあたってのお願い（禁止・注意事項）
             </h3>
-            <ul className="mt-4 space-y-3 text-base leading-7 text-neutral-200">
-              {notices.map((notice) => (
-                <li key={notice} className="flex gap-2">
-                  <span className="shrink-0" aria-hidden>
-                    ・
-                  </span>
-                  <span>{notice}</span>
-                </li>
+            <p className="mt-4 text-base leading-7 text-neutral-200">
+              皆様に快適・安全にご利用いただくため、以下のルール厳守をお願いいたします。
+            </p>
+
+            <div className="mt-8 space-y-8">
+              {noticeGroups.map((group) => (
+                <div key={group.title}>
+                  <h4 className="text-sm font-medium tracking-wide text-white md:text-base">
+                    {group.title}
+                  </h4>
+                  <ul className="mt-3 space-y-3 text-base leading-7 text-neutral-200">
+                    {group.items.map((item) => (
+                      <li key={item} className="flex gap-2">
+                        <span className="shrink-0" aria-hidden>
+                          ・
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </FadeIn>
       </div>

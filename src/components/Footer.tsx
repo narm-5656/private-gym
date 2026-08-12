@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/booking";
 
 export function Footer() {
   return (
@@ -51,7 +52,12 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <a href="#pricing" className="transition-colors hover:text-white">
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-white"
+              >
                 予約する
               </a>
             </li>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { BOOKING_URL } from "@/lib/booking";
 
 export function Hero() {
   return (
@@ -63,8 +64,10 @@ export function Hero() {
           className="mt-10"
         >
           <a
-            href="#pricing"
-            className="inline-flex items-center justify-center border border-white bg-white px-8 py-4 font-display text-xs tracking-[0.24em] text-black transition-colors hover:bg-transparent hover:text-white md:px-10"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center border border-white bg-white px-8 py-4 font-display text-sm tracking-[0.24em] text-black transition-colors hover:bg-transparent hover:text-white md:px-10"
           >
             今すぐ予約する
           </a>
