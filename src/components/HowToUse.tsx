@@ -42,8 +42,8 @@ const steps = [
     icon: LogOut,
     step: "05",
     title: "退室",
-    body: "簡易清掃の上、予約時間内にご退室ください。",
-    note: "次にご利用される方のため、器具の拭き上げ、掃除機によるホコリ・髪の毛の清掃にご協力をお願いいたします。",
+    body: "簡易清掃の上、ご退室ください。",
+    note: "予約時間終了後の10分間で、次にご利用される方のため、器具の拭き上げ、掃除機によるホコリ・髪の毛の清掃にご協力をお願いいたします。",
   },
 ];
 
@@ -67,7 +67,8 @@ const noticeGroups = [
   {
     title: "ご予約・ご利用時間について",
     items: [
-      "ご予約時間を超過しての滞在（次の利用者様のご迷惑となりますので、お着替え・清掃を含め、退室時間は厳守してください）",
+      "ご予約時間終了後10分間（簡易清掃・退室のためのお時間）を超えての滞在（次の利用者様のご迷惑となりますので、退室期限は厳守してください）",
+      "ご予約時間の前後に店舗前で長時間お待ちいただく行為\n（近隣にお住まいの皆様へのご配慮として、開始時刻の直前にお越しいただき、終了後は速やかなご退出にご協力をお願いいたします）",
     ],
   },
 ];
@@ -83,7 +84,7 @@ export function HowToUse() {
     <section id="howto" className="px-5 py-24 md:px-8 md:py-32">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <p className="section-label">利用方法</p>
+          <p className="section-label">HOW TO USE</p>
           <h2 className="mt-5 text-3xl font-medium tracking-wide text-white md:text-4xl">
             ご利用の流れ
           </h2>
@@ -136,7 +137,7 @@ export function HowToUse() {
                         <span className="shrink-0" aria-hidden>
                           ・
                         </span>
-                        <span>{item}</span>
+                        <span className="whitespace-pre-line">{item}</span>
                       </li>
                     ))}
                   </ul>

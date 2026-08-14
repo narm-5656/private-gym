@@ -31,7 +31,7 @@ export function Equipment() {
     <section id="equipment" className="px-5 py-24 md:px-8 md:py-32">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <p className="section-label">設備</p>
+          <p className="section-label">EQUIPMENT</p>
           <h2 className="mt-5 text-3xl font-medium tracking-wide text-white md:text-4xl">
             設備・マシン
           </h2>

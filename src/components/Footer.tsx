@@ -15,7 +15,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="section-label">施設情報</p>
+          <p className="section-label">FACILITY</p>
           <ul className="mt-4 space-y-2 text-base leading-7 text-neutral-200">
             <li>BASE 宮原</li>
             <li>埼玉県さいたま市北区宮原町</li>
@@ -28,7 +28,7 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="section-label">リンク</p>
+          <p className="section-label">LINKS</p>
           <ul className="mt-4 space-y-2 text-base text-neutral-200">
             <li>
               <Link href="/law" className="transition-colors hover:text-white">

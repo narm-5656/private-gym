@@ -35,7 +35,7 @@ export function Access() {
     <section id="access" className="border-t border-white/10 px-5 py-24 md:px-8 md:py-32">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <p className="section-label">アクセス</p>
+          <p className="section-label">ACCESS</p>
           <h2 className="mt-5 text-3xl font-medium tracking-wide text-white md:text-4xl">
             場所・営業時間
           </h2>

@@ -20,13 +20,16 @@ export function Pricing() {
     <section id="pricing" className="border-y border-white/10 bg-surface px-5 py-24 md:px-8 md:py-32">
       <div className="mx-auto max-w-6xl">
         <FadeIn>
-          <p className="section-label">料金</p>
+          <p className="section-label">PRICING</p>
           <h2 className="mt-5 text-3xl font-medium tracking-wide text-white md:text-4xl">
             料金プラン
           </h2>
+          <p className="mt-5 text-sm leading-7 text-neutral-300 md:text-base">
+            ※各時間に簡易清掃・退室準備のための「10分間」サービスが付きます。
+          </p>
         </FadeIn>
 
-        <div className="mt-14">
+        <div className="mt-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
             <FadeIn className="h-full">
               <div className="flex h-full flex-col border border-white bg-background p-7 md:p-9">
