@@ -25,7 +25,7 @@ export function Pricing() {
             料金プラン
           </h2>
           <p className="mt-5 text-sm leading-7 text-neutral-300 md:text-base">
-            ※各時間に簡易清掃・退室準備のための「10分間」サービスが付きます。
+            各予約時間に、簡易清掃・退室準備のための「10分間」が付きます。
           </p>
         </FadeIn>
 
