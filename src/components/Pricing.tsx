@@ -1,6 +1,6 @@
 "use client";
 
-import { BOOKING_URL, GIFT_CARD_URL, GIFT_CARD_BALANCE_URL } from "@/lib/booking";
+import { BOOKING_URL, GIFT_CARD_URL } from "@/lib/booking";
 import { FadeIn } from "./FadeIn";
 
 const dropIn = [
@@ -33,22 +33,10 @@ export function Pricing() {
           <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
             <FadeIn className="h-full">
               <div className="flex h-full flex-col border border-white bg-background p-7 md:p-9">
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div>
-                    <p className="font-display text-sm tracking-[0.22em] text-muted">
-                      DROP-IN
-                    </p>
-                    <h3 className="mt-3 text-xl text-white">都度決済（前払い不要）</h3>
-                  </div>
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex shrink-0 items-center justify-center border border-white bg-white px-8 py-4 font-display text-sm tracking-[0.24em] text-black transition-colors hover:bg-transparent hover:text-white"
-                  >
-                    予約する
-                  </a>
-                </div>
+                <p className="font-display text-sm tracking-[0.22em] text-muted">
+                  DROP-IN
+                </p>
+                <h3 className="mt-3 text-xl text-white">都度決済（前払い不要）</h3>
                 <ul className="mt-8 space-y-0 divide-y divide-white/10">
                   {dropIn.map((plan) => (
                     <li
@@ -69,20 +57,10 @@ export function Pricing() {
 
             <FadeIn className="h-full" delay={0.1}>
               <div className="flex h-full flex-col border border-white bg-background p-7 md:p-9">
-                <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-4">
-                  <p className="font-display text-sm tracking-[0.22em] text-muted">
-                    BEST VALUE
-                  </p>
-                  <a
-                    href={GIFT_CARD_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex shrink-0 items-center justify-center border border-white bg-white px-5 py-3 font-display text-xs tracking-[0.18em] text-black transition-colors hover:bg-transparent hover:text-white sm:px-6 sm:py-3.5 sm:text-sm"
-                  >
-                    ギフトカード購入
-                  </a>
-                </div>
-                <h3 className="mt-5 max-w-xl text-xl text-white">
+                <p className="font-display text-sm tracking-[0.22em] text-muted">
+                  BEST VALUE
+                </p>
+                <h3 className="mt-3 max-w-xl text-xl text-white">
                   ギフトカード（前払い残高）利用で10%OFF
                 </h3>
                 <div className="mt-3 max-w-xl space-y-2 text-base leading-relaxed text-neutral-200">
@@ -118,12 +96,12 @@ export function Pricing() {
               <div className="hidden lg:block" aria-hidden />
               <div className="flex justify-end">
                 <a
-                  href={GIFT_CARD_BALANCE_URL}
+                  href={GIFT_CARD_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center border border-white bg-white px-6 py-4 font-display text-sm tracking-[0.18em] text-black transition-colors hover:bg-transparent hover:text-white"
                 >
-                  ギフトカードの残高確認・チャージ
+                  ギフトカードメニュー
                 </a>
               </div>
             </div>
