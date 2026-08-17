@@ -5,14 +5,14 @@ import { FadeIn } from "./FadeIn";
 
 const dropIn = [
   { duration: "60分", price: "1,900" },
-  { duration: "90分", price: "2,850" },
-  { duration: "120分", price: "3,800" },
+  { duration: "90分", price: "2,750" },
+  { duration: "120分", price: "3,600" },
 ];
 
 const unitPrices = [
   { duration: "60分", price: "1,710" },
-  { duration: "90分", price: "2,565" },
-  { duration: "120分", price: "3,420" },
+  { duration: "90分", price: "2,475" },
+  { duration: "120分", price: "3,240" },
 ];
 
 export function Pricing() {
@@ -38,7 +38,7 @@ export function Pricing() {
                     <p className="font-display text-sm tracking-[0.22em] text-muted">
                       DROP-IN
                     </p>
-                    <h3 className="mt-3 text-xl text-white">都度払い</h3>
+                    <h3 className="mt-3 text-xl text-white">都度決済（前払い不要）</h3>
                   </div>
                   <a
                     href={BOOKING_URL}
@@ -83,11 +83,12 @@ export function Pricing() {
                   </a>
                 </div>
                 <h3 className="mt-5 max-w-xl text-xl text-white">
-                  ギフトカード利用（10％OFF）
+                  ギフトカード（前払い残高）利用で10%OFF
                 </h3>
-                <p className="mt-3 max-w-xl text-base leading-relaxed text-neutral-200">
-                  ギフトカードは19,000円から購入・チャージ可能です。
-                </p>
+                <div className="mt-3 max-w-xl space-y-2 text-base leading-relaxed text-neutral-200">
+                  <p>ギフトカードは19,000円から購入・チャージできます。</p>
+                  <p>ご予約時間に応じた料金が、残高から差し引かれます。</p>
+                </div>
 
                 <div className="mt-6 overflow-x-auto">
                   <table className="w-full min-w-0 border-collapse text-left">
@@ -98,6 +99,9 @@ export function Pricing() {
                             {row.duration}
                           </td>
                           <td className="py-4 text-right font-display text-xl tracking-wide text-white md:text-2xl">
+                            <span className="mr-2 text-sm tracking-normal text-neutral-300 md:text-base">
+                              実質
+                            </span>
                             ¥{row.price}
                           </td>
                         </tr>
@@ -119,7 +123,7 @@ export function Pricing() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center border border-white bg-white px-6 py-4 font-display text-sm tracking-[0.18em] text-black transition-colors hover:bg-transparent hover:text-white"
                 >
-                  ギフトカードの残高確認・チャージはこちら
+                  ギフトカードの残高確認・チャージ
                 </a>
               </div>
             </div>

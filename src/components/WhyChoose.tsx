@@ -2,6 +2,33 @@
 
 import { FadeIn } from "./FadeIn";
 
+const features = [
+  {
+    step: "01",
+    title: "完全個室・貸切だから誰にも気を遣わない",
+    body: [
+      "当ジムは、お客様お一人（またはグループ）でご利用いただく完全貸切制。",
+      "マシンの順番待ちや周囲の視線も気にせず、ご自身のペースでトレーニングに集中できます。",
+    ],
+  },
+  {
+    step: "02",
+    title: "業務用グレードの本格設備を独り占め",
+    body: [
+      "一般的なジムにも採用されている業務用グレードのマルチラックを完備。",
+      "フリーウェイトから多彩なトレーニングまで、充実した設備を貸切でご利用いただけます。",
+    ],
+  },
+  {
+    step: "03",
+    title: "予約時間はトレーニングのためだけに",
+    body: [
+      "予約時間に加えて、お着替え・簡易清掃・退室のための「10分間」を無料でご用意。",
+      "一般的な予約制個室ジムでは予約時間内に退室準備まで行う必要がありますが、当ジムでは予約時間をすべてトレーニングに使えます。",
+    ],
+  },
+];
+
 export function WhyChoose() {
   return (
     <section
@@ -14,17 +41,25 @@ export function WhyChoose() {
           <h2 className="mt-5 text-3xl font-medium tracking-wide text-white md:text-4xl">
             特徴
           </h2>
-          <div className="mt-8 max-w-3xl space-y-5 text-base leading-8 text-neutral-200 md:text-lg md:leading-9">
-            <p>当ジムでは予約時間を全てトレーニングに使えます。</p>
-            <p>
-              一般的なレンタルジムで60分の予約をした場合、「60分の枠内」でお着替えや清掃を行うため、実際のトレーニング時間は「45分程度」になってしまいます。
-            </p>
-            <p>
-              当ジムでは、60分のフルトレーニング枠に加え、「お着替え・簡易清掃・退室のためのお時間（10分間）」を無料でサービスしております。
-            </p>
-            <p>人目も時計も気にせず、限界まで追い込んでください。</p>
-          </div>
         </FadeIn>
+
+        <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-8">
+          {features.map((item, index) => (
+            <FadeIn key={item.step} delay={index * 0.08}>
+              <p className="font-display text-5xl tracking-wider text-white/25 md:text-6xl">
+                {item.step}
+              </p>
+              <h3 className="mt-5 text-lg font-medium tracking-wide text-white md:text-xl">
+                {item.title}
+              </h3>
+              <div className="mt-4 space-y-3 text-base leading-7 text-neutral-200">
+                {item.body.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </FadeIn>
+          ))}
+        </div>
       </div>
     </section>
   );
